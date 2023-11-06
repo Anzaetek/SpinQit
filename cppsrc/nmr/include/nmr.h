@@ -109,7 +109,7 @@ public:
             verbose = pcobj.cast<bool>();
         }
         
-        igraph_t *gptr = (igraph_t *)graph.get_pointer();
+        igraph_t *gptr = (igraph_t *)graph.operator void *(); // get_pointer();
         vector<Operation> gate_map; 
         int qnum = translate(gptr, gate_map);
 

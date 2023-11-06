@@ -59,7 +59,7 @@ public:
         vector<StateType> sv;
         vector<double> ps;
 
-        igraph_t *gptr = (igraph_t *)graph.get_pointer();
+        igraph_t *gptr = (igraph_t *) graph.operator void*(); //  get_pointer();
         igraph_vector_t vs_res;
         igraph_vector_init(&vs_res, 0);
         igraph_topological_sorting(gptr, &vs_res, IGRAPH_OUT);
